@@ -1,0 +1,303 @@
+	Shortest Path in a Grid You are located in the top-left corner of the following grid:
+	
+	   [[0,0,0,0,0,0,1,0,1,1,1],
+	   [0,0,0,0,0,0,1,1,0,0,0],
+	   [0,0,0,0,0,0,0,1,1,0,0],
+	   [0,0,0,0,0,0,0,1,0,0,0],
+	   [0,0,0,0,0,1,0,0,0,0,0],
+	   [0,0,0,1,0,1,0,0,1,0,0],
+	   [0,0,1,0,1,1,1,1,0,0,0],
+	   [1,0,1,0,0,0,0,0,0,0,0],
+	   [1,1,0,0,0,0,1,0,0,0,0]]
+	
+	 You are trying to find the shortest path to the bottom-right corner of the grid, but there are obstacles on the grid that you cannot move onto. These obstacles are denoted by '1', while empty spaces are denoted by 0.
+	
+	 Determine the shortest path from start to finish, if one exists. The answer should be given as a string of UDLR characters, indicating the moves along the path
+	
+	 NOTE: If there are multiple equally short paths, any of them is accepted as answer. If there is no path, the answer should be an empty string.
+	 NOTE: The data returned for this contract is an 2D array of numbers representing the grid.
+	
+	 Examples:
+	
+	     [[0,1,0,0,0],
+	      [0,0,0,1,0]]
+	 
+	 Answer: 'DRRURRD'
+	
+	     [[0,1],
+	      [1,0]]
+	 
+	 Answer: ''
+	
+	 [[0,0,0,0,0,0,1,0,1,1,1],[0,0,0,0,0,0,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0],[0,0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,1,0,0,0,0,0],[0,0,0,1,0,1,0,0,1,0,0],[0,0,1,0,1,1,1,1,0,0,0],[1,0,1,0,0,0,0,0,0,0,0],[1,1,0,0,0,0,1,0,0,0,0]] * * * * * * * * * * Algorithmic Stock Trader III You are given the following array of stock prices (which are numbers) where the i-th element represents the stock price on day i:
+	
+	 28,196,37,151,34,52,122,69,104,184,81,66,85,139,138,137,71,65,53,185,114
+	
+	 Determine the maximum possible profit you can earn using at most two transactions. A transaction is defined as buying and then selling one share of the stock. Note that you cannot engage in multiple transactions at once. In other words, you must sell the stock before you buy it again.
+	
+	 If no profit can be made, then the answer should be 0 [28,196,37,151,34,52,122,69,104,184,81,66,85,139,138,137,71,65,53,185,114] * * * * * * * * * * Algorithmic Stock Trader I You are given the following array of stock prices (which are numbers) where the i-th element represents the stock price on day i:
+	
+	 104,193,196,98,122,39,34,139,95,84,164,183,149,39,161,125,158,116,160,42,142,83,61,188,2,128,61,195,65,121,200,99,159,198,55,40,188,146,199,119,83
+	
+	 Determine the maximum possible profit you can earn using at most one transaction (i.e. you can only buy and sell the stock once). If no profit can be made then the answer should be 0. Note that you have to buy the stock before you can sell it [104,193,196,98,122,39,34,139,95,84,164,183,149,39,161,125,158,116,160,42,142,83,61,188,2,128,61,195,65,121,200,99,159,198,55,40,188,146,199,119,83] * * * * * * * * * * Unique Paths in a Grid I You are in a grid with 4 rows and 12 columns, and you are positioned in the top-left corner of that grid. You are trying to reach the bottom-right corner of the grid, but you can only move down or right on each step. Determine how many unique paths there are from start to finish.
+	
+	 NOTE: The data returned for this contract is an array with the number of rows and columns:
+	
+	 [4, 12] [4,12] * * * * * * * * * * Algorithmic Stock Trader IV You are given the following array with two elements:
+	
+	 [3, [195,108,153]]
+	
+	 The first element is an integer k. The second element is an array of stock prices (which are numbers) where the i-th element represents the stock price on day i.
+	
+	 Determine the maximum possible profit you can earn using at most k transactions. A transaction is defined as buying and then selling one share of the stock. Note that you cannot engage in multiple transactions at once. In other words, you must sell the stock before you can buy it again.
+	
+	 If no profit can be made, then the answer should be 0. [3,[195,108,153]] * * * * * * * * * * Minimum Path Sum in a Triangle Given a triangle, find the minimum path sum from top to bottom. In each step of the path, you may only move to adjacent numbers in the row below. The triangle is represented as a 2D array of numbers:
+	
+	 [
+	          [7],
+	         [8,6],
+	        [3,5,3],
+	       [5,8,2,4],
+	      [9,2,8,2,7],
+	     [3,4,8,4,5,4],
+	    [8,5,2,8,9,4,4],
+	   [1,8,3,2,1,7,4,6],
+	  [3,3,7,1,5,6,4,1,9]
+	]
+	
+	 Example: If you are given the following triangle:
+	
+	[
+	      [2],
+	     [3,4],
+	    [6,5,7],
+	   [4,1,8,3]
+	 ]
+	
+	 The minimum path sum is 11 (2 -> 3 -> 5 -> 1). [[7],[8,6],[3,5,3],[5,8,2,4],[9,2,8,2,7],[3,4,8,4,5,4],[8,5,2,8,9,4,4],[1,8,3,2,1,7,4,6],[3,3,7,1,5,6,4,1,9]] * * * * * * * * * * HammingCodes: Integer to Encoded Binary You are given the following decimal Value: 
+	 13725981025 
+	 Convert it to a binary representation and encode it as an 'extended Hamming code'. Eg:
+	  Value 8 is expressed in binary as '1000', which will be encoded with the pattern 'pppdpddd', where p is a parity bit and d a data bit. The encoding of
+	 8 is 11110000. As another example, '10101' (Value 21) will result into (pppdpdddpd) '1001101011'.
+	 The answer should be given as a string containing only 1s and 0s.
+	 NOTE: the endianness of the data bits is reversed in relation to the endianness of the parity bits.
+	 NOTE: The bit at index zero is the overall parity bit, this should be set last.
+	 NOTE 2: You should watch the Hamming Code video from 3Blue1Brown, which explains the 'rule' of encoding, including the first index parity bit mentioned in the previous note.
+	
+	 Extra rule for encoding:
+	 There should be no leading zeros in the 'data bit' section 13725981025 * * * * * * * * * * Array Jumping Game II You are given the following array of integers:
+	
+	 2,4,5,4,4,6,2,3,0,1,2,2,3,2,2,0,6,1,2,7
+	
+	 Each element in the array represents your MAXIMUM jump length at that position. This means that if you are at position i and your maximum jump length is n, you can jump to any position from i to i+n. 
+	
+	Assuming you are initially positioned at the start of the array, determine the minimum number of jumps to reach the end of the array.
+	
+	 If it's impossible to reach the end, then the answer should be 0. [2,4,5,4,4,6,2,3,0,1,2,2,3,2,2,0,6,1,2,7] * * * * * * * * * * Algorithmic Stock Trader II You are given the following array of stock prices (which are numbers) where the i-th element represents the stock price on day i:
+	
+	 170,163,55,139,63,175,25,109,78,40,31,37,65,55,136,83,16,193,180,45,182,37,34,41,145,85,118,72,89,73,188,22,13,181,117,183,115,3,189
+	
+	 Determine the maximum possible profit you can earn using as many transactions as you'd like. A transaction is defined as buying and then selling one share of the stock. Note that you cannot engage in multiple transactions at once. In other words, you must sell the stock before you buy it again.
+	
+	 If no profit can be made, then the answer should be 0 [170,163,55,139,63,175,25,109,78,40,31,37,65,55,136,83,16,193,180,45,182,37,34,41,145,85,118,72,89,73,188,22,13,181,117,183,115,3,189] * * * * * * * * * * Unique Paths in a Grid II You are located in the top-left corner of the following grid:
+	
+	 0,1,0,0,
+	0,0,0,0,
+	0,0,1,0,
+	
+	 You are trying reach the bottom-right corner of the grid, but you can only move down or right on each step. Furthermore, there are obstacles on the grid that you cannot move onto. These obstacles are denoted by '1', while empty spaces are denoted by 0.
+	
+	 Determine how many unique paths there are from start to finish.
+	
+	 NOTE: The data returned for this contract is an 2D array of numbers representing the grid. [[0,1,0,0],[0,0,0,0],[0,0,1,0]] * * * * * * * * * * Encryption II: Vigenère Cipher Vigenère cipher is a type of polyalphabetic substitution. It uses  the Vigenère square to encrypt and decrypt plaintext with a keyword.
+	
+	   Vigenère square:
+	          A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+	        +----------------------------------------------------
+	      A | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+	      B | B C D E F G H I J K L M N O P Q R S T U V W X Y Z A 
+	      C | C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
+	      D | D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+	      E | E F G H I J K L M N O P Q R S T U V W X Y Z A B C D
+	                 ...
+	      Y | Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
+	      Z | Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+	
+	 For encryption each letter of the plaintext is paired with the corresponding letter of a repeating keyword. For example, the plaintext DASHBOARD is encrypted with the keyword LINUX:
+	    Plaintext: DASHBOARD
+	    Keyword:   LINUXLINU
+	 So, the first letter D is paired with the first letter of the key L. Therefore, row D and column L of the  Vigenère square are used to get the first cipher letter O. This must be repeated for the whole ciphertext.
+	
+	 You are given an array with two elements:
+	   ["MOUSEPASTEQUEUESHIFTTRASH", "DIGITAL"]
+	 The first element is the plaintext, the second element is the keyword.
+	
+	 Return the ciphertext as uppercase string. ["MOUSEPASTEQUEUESHIFTTRASH","DIGITAL"] * * * * * * * * * * Encryption I: Caesar Cipher Caesar cipher is one of the simplest encryption technique. It is a type of substitution cipher in which each letter in the plaintext  is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A,  E would become B, and A would become X (because of rotation).
+	
+	 You are given an array with two elements:
+	   ["MEDIA CACHE POPUP ARRAY MOUSE", 8]
+	 The first element is the plaintext, the second element is the left shift value.
+	
+	 Return the ciphertext as uppercase string. Spaces remains the same. ["MEDIA CACHE POPUP ARRAY MOUSE",8] * * * * * * * * * * HammingCodes: Encoded Binary to Integer You are given the following encoded binary string: 
+	 '0110000001101110110101011100000001001010101110000000010101001001' 
+	
+	 Treat it as an extended Hamming code with 1 'possible' error at a random index.
+	 Find the 'possible' wrong bit, fix it and extract the decimal value, which is hidden inside the string.
+	
+	 Note: The length of the binary string is dynamic, but its encoding/decoding follows Hamming's 'rule'
+	 Note 2: Index 0 is an 'overall' parity bit. Watch the Hamming code video from 3Blue1Brown for more information
+	 Note 3: There's a ~55% chance for an altered Bit. So... MAYBE there is an altered Bit 😉
+	 Note: The endianness of the encoded decimal value is reversed in relation to the endianness of the Hamming code. Where the Hamming code is expressed as little-endian (LSB at index 0), the decimal value encoded in it is expressed as big-endian (MSB at index 0).
+	 Extra note for automation: return the decimal value as a string 0110000001101110110101011100000001001010101110000000010101001001 * * * * * * * * * * Total Ways to Sum It is possible write four as a sum in exactly four different ways:
+	
+	     3 + 1
+	     2 + 2
+	     2 + 1 + 1
+	     1 + 1 + 1 + 1
+	
+	 How many different distinct ways can the number 83 be written as a sum of at least two positive integers? 83 * * * * * * * * * * Proper 2-Coloring of a Graph You are given the following data, representing a graph:
+	 [10,[[3,4],[0,1],[3,9],[1,2],[6,8],[4,8],[6,9],[3,5],[0,4],[2,3],[4,9]]]
+	 Note that "graph", as used here, refers to the field of graph theory, and has no relation to statistics or plotting. The first element of the data represents the number of vertices in the graph. Each vertex is a unique number between 0 and 9. The next element of the data represents the edges of the graph. Two vertices u,v in a graph are said to be adjacent if there exists an edge [u,v]. Note that an edge [u,v] is the same as an edge [v,u], as order does not matter. You must construct a 2-coloring of the graph, meaning that you have to assign each vertex in the graph a "color", either 0 or 1, such that no two adjacent vertices have the same color. Submit your answer in the form of an array, where element i represents the color of vertex i. If it is impossible to construct a 2-coloring of the given graph, instead submit an empty array.
+	
+	 Examples:
+	
+	 Input: [4, [[0, 2], [0, 3], [1, 2], [1, 3]]]
+	 Output: [0, 0, 1, 1]
+	
+	 Input: [3, [[0, 1], [0, 2], [1, 2]]]
+	 Output: [] [10,[[3,4],[0,1],[3,9],[1,2],[6,8],[4,8],[6,9],[3,5],[0,4],[2,3],[4,9]]] * * * * * * * * * * Find All Valid Math Expressions You are given the following string which contains only digits between 0 and 9:
+	
+	 9923021
+	
+	 You are also given a target number of -88. Return all possible ways you can add the +(add), -(subtract), and *(multiply) operators to the string such that it evaluates to the target number. (Normal order of operations applies.)
+	
+	 The provided answer should be an array of strings containing the valid expressions. The data provided by this problem is an array with two elements. The first element is the string of digits, while the second element is the target number:
+	
+	 ["9923021", -88]
+	
+	 NOTE: The order of evaluation expects script operator precedence NOTE: Numbers in the expression cannot have leading 0's. In other words, "1+01" is not a valid expression Examples:
+	
+	 Input: digits = "123", target = 6
+	 Output: [1+2+3, 1*2*3]
+	
+	 Input: digits = "105", target = 5
+	 Output: [1*0+5, 10-5] ["9923021",-88] * * * * * * * * * * Spiralize Matrix Given the following array of arrays of numbers representing a 2D matrix, return the elements of the matrix as an array in spiral order:
+	
+	    [
+	        [46]
+	        [15]
+	        [24]
+	        [46]
+	        [40]
+	        [35]
+	        [14]
+	    ]
+	
+	Here is an example of what spiral order should be:
+	
+	     [
+	         [1, 2, 3]
+	         [4, 5, 6]
+	         [7, 8, 9]
+	     ]
+	
+	 Answer: [1, 2, 3, 6, 9, 8 ,7, 4, 5]
+	
+	 Note that the matrix will not always be square:
+	
+	     [
+	         [1,  2,  3,  4]
+	         [5,  6,  7,  8]
+	         [9, 10, 11, 12]
+	     ]
+	
+	 Answer: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7] [[46],[15],[24],[46],[40],[35],[14]] * * * * * * * * * * Total Ways to Sum II How many different distinct ways can the number 15 be written as a sum of integers contained in the set:
+	
+	 [2,3,4,5,6,9,10,12]?
+	
+	 You may use each integer in the set zero or more times. [15,[2,3,4,5,6,9,10,12]] * * * * * * * * * * Array Jumping Game You are given the following array of integers:
+	
+	 9,1,9,10,10,0,0,0,9,0,0,10,0,3,0,5,0,10,6,9,9
+	
+	 Each element in the array represents your MAXIMUM jump length at that position. This means that if you are at position i and your maximum jump length is n, you can jump to any position from i to i+n. 
+	
+	Assuming you are initially positioned at the start of the array, determine whether you are able to reach the last index.
+	
+	 Your answer should be submitted as 1 or 0, representing true and false respectively [9,1,9,10,10,0,0,0,9,0,0,10,0,3,0,5,0,10,6,9,9] * * * * * * * * * * Sanitize Parentheses in Expression Given the following string:
+	
+	 (a(())(aa()a)))(a)((
+	
+	 remove the minimum number of invalid parentheses in order to validate the string. If there are multiple minimal ways to validate the string, provide all of the possible results. The answer should be provided as an array of strings. If it is impossible to validate the string the result should be an array with only an empty string.
+	
+	 IMPORTANT: The string may contain letters, not just parentheses. Examples:
+	 "()())()" -> [()()(), (())()]
+	 "(a)())()" -> [(a)()(), (a())()]
+	 ")(" -> [""] (a(())(aa()a)))(a)(( * * * * * * * * * * Compression III: LZ Compression Lempel-Ziv (LZ) compression is a data compression technique which encodes data using references to earlier parts of the data. In this variant of LZ, data is encoded in two types of chunk. Each chunk begins with a length L, encoded as a single ASCII digit from 1 to 9, followed by the chunk data, which is either:
+	
+	 1. Exactly L characters, which are to be copied directly into the uncompressed data.
+	 2. A reference to an earlier part of the uncompressed data. To do this, the length is followed by a second ASCII digit X: each of the L output characters is a copy of the character X places before it in the uncompressed data.
+	
+	 For both chunk types, a length of 0 instead means the chunk ends immediately, and the next character is the start of a new chunk. The two chunk types alternate, starting with type 1, and the final chunk may be of either type.
+	
+	 You are given the following input string:
+	     rWp8uZg4Y1rrrryyyyyyyyMYVfYVxfVfYVxfVfshF6fi7N2PF86F86F86FF3Dr6FF3KboqWWW
+	 Encode it using Lempel-Ziv encoding with the minimum possible output length.
+	
+	 Examples (some have other possible encodings of minimal length):
+	     abracadabra     ->  7abracad47
+	     mississippi     ->  4miss433ppi
+	     aAAaAAaAaAA     ->  3aAA53035
+	     2718281828      ->  627182844
+	     abcdefghijk     ->  9abcdefghi02jk
+	     aaaaaaaaaaaa    ->  3aaa91
+	     aaaaaaaaaaaaa   ->  1a91031
+	     aaaaaaaaaaaaaa  ->  1a91041 rWp8uZg4Y1rrrryyyyyyyyMYVfYVxfVfYVxfVfshF6fi7N2PF86F86F86FF3Dr6FF3KboqWWW * * * * * * * * * * Compression I: RLE Compression Run-length encoding (RLE) is a data compression technique which encodes data as a series of runs of a repeated single character. Runs are encoded as a length, followed by the character itself. Lengths are encoded as a single ASCII digit; runs of 10 characters or more are encoded by splitting them into multiple runs.
+	
+	 You are given the following input string:
+	     QQQTTT000000000jjjjjjjjjjjy1ttttttttttttttkkGGGGNNDD4nnnnnnn5rrrrrrrrrrrrrr4PPPPPPPPPwwww
+	 Encode it using run-length encoding with the minimum possible output length.
+	
+	 Examples:
+	     aaaaabccc            ->  5a1b3c
+	     aAaAaA               ->  1a1A1a1A1a1A
+	     111112333            ->  511233
+	     zzzzzzzzzzzzzzzzzzz  ->  9z9z1z  (or 9z8z2z, etc.)
+	 QQQTTT000000000jjjjjjjjjjjy1ttttttttttttttkkGGGGNNDD4nnnnnnn5rrrrrrrrrrrrrr4PPPPPPPPPwwww * * * * * * * * * * Find Largest Prime Factor A prime factor is a factor that is a prime number. What is the largest prime factor of 894636809? 894636809 * * * * * * * * * * Subarray with Maximum Sum Given the following integer array, find the contiguous subarray (containing at least one number) which has the largest sum and return that sum. 'Sum' refers to the sum of all the numbers in the subarray.
+	 -3,-1,9,-8,7,-10,10,-9,-7,-6,-8,-5,7,10,-2,8,2,-10,0,-3,-7,-5,-5,10,-7,-3,3,-6,-8,9,2,9,-6,-7,10,-9,-8,1 [-3,-1,9,-8,7,-10,10,-9,-7,-6,-8,-5,7,10,-2,8,2,-10,0,-3,-7,-5,-5,10,-7,-3,3,-6,-8,9,2,9,-6,-7,10,-9,-8,1] * * * * * * * * * * Generate IP Addresses Given the following string containing only digits, return an array with all possible valid IP address combinations that can be created from the string:
+	
+	 774574195
+	
+	 Note that an octet cannot begin with a '0' unless the number itself is actually 0. For example, '192.168.010.1' is not a valid IP.
+	
+	 Examples:
+	
+	 25525511135 -> ["255.255.11.135", "255.255.111.35"]
+	 1938718066 -> ["193.87.180.66"] 774574195 * * * * * * * * * * Merge Overlapping Intervals Given the following array of arrays of numbers representing a list of intervals, merge all overlapping intervals.
+	
+	 [[1,5],[25,33],[23,32],[11,12]]
+	
+	 Example:
+	
+	 [[1, 3], [8, 10], [2, 6], [10, 16]]
+	
+	 would merge into [[1, 6], [8, 16]].
+	
+	 The intervals must be returned in ASCENDING order. You can assume that in an interval, the first number will always be smaller than the second. [[1,5],[25,33],[23,32],[11,12]] * * * * * * * * * * Compression II: LZ Decompression Lempel-Ziv (LZ) compression is a data compression technique which encodes data using references to earlier parts of the data. In this variant of LZ, data is encoded in two types of chunk. Each chunk begins with a length L, encoded as a single ASCII digit from 1 to 9, followed by the chunk data, which is either:
+	
+	 1. Exactly L characters, which are to be copied directly into the uncompressed data.
+	 2. A reference to an earlier part of the uncompressed data. To do this, the length is followed by a second ASCII digit X: each of the L output characters is a copy of the character X places before it in the uncompressed data.
+	
+	 For both chunk types, a length of 0 instead means the chunk ends immediately, and the next character is the start of a new chunk. The two chunk types alternate, starting with type 1, and the final chunk may be of either type.
+	
+	 You are given the following LZ-encoded string:
+	     7tS3AwKG1337nS9933e6899mTk1nS71Y914TM182150jQxU473t7j953TpO
+	 Decode it and output the original string.
+	
+	 Example: decoding '5aaabb450723abb' chunk-by-chunk
+	     5aaabb           ->  aaabb
+	     5aaabb45         ->  aaabbaaab
+	     5aaabb450        ->  aaabbaaab
+	     5aaabb45072      ->  aaabbaaababababa
+	     5aaabb450723abb  ->  aaabbaaababababaabb 7tS3AwKG1337nS9933e6899mTk1nS71Y914TM182150jQxU473t7j953TpO * * * * * * * * * *
+
+
