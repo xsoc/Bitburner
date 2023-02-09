@@ -1,6 +1,9 @@
 # Bitburner
 Collection of scripts for the amazing programming game, Bitburner ([Steam](https://store.steampowered.com/app/1812820/Bitburner/), [Web](https://danielyxie.github.io/bitburner/))
 
+## Conrtactor
+It searches all servers for coding contracts and attempts to solve what it can. Currently it is only solving "Algorithmic Stock Trader I", I plan to slowly add coding contract solutions as I find them. It seems likely this will be broken up into multiple scripts in the future for RAM and editing sanity considerations.
+
 ## Extract
 Skip this for now, it is literally the example script 'early-hack-template' from the games documentation. I hope to change this later, but it does the job for me right now. It's only here because you need a script titled extract.js to run the spider below :)
 
