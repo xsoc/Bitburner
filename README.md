@@ -11,7 +11,7 @@ Creates a dummy contract of every type available and dumps the contents to the t
 Skip this for now, it is literally the example script 'early-hack-template' from the games documentation. I hope to change this later, but it does the job for me right now. It's only here because you need a script titled extract.js to run the spider.js below :)
 
 ## [indexer.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/indexer.js)
-It's scan-analyze, but it traverses *every* server.
+It traverses *every* server and displays some vital stats in a table format.
 
 ## [networth.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/networth.js)
 If you're a stock market fiend, this will give you a floating tail window that will tell you your total $$$, ie. stock market value + cash
@@ -26,3 +26,6 @@ This script will continually search for servers to pwn. Once your hacking level 
 
 ## [stocks.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/stocks.js)
 A pretty basic (and very messy) automatated stock trading script, but it makes reasonable $$$ for now.
+
+## [tree](https://raw.githubusercontent.com/xsoc/Bitburner/main/tree.js)
+Displays the entire network tree layout with home as the root node. Think minimalist scan-analyse.
