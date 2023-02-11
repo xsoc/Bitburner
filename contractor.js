@@ -1,7 +1,6 @@
 /** @param {NS} ns */
 export async function main(ns) {
 	var master_server_list = [];
-
 	spider("home");
 
 	function spider(target) {
@@ -18,14 +17,17 @@ export async function main(ns) {
 
 	for (const server of master_server_list) {
 		for (const contract of ns.ls(server, ".cct")) {
+			const contract_type = ns.codingcontract.getContractType(contract, server)
+			const data = ns.codingcontract.getData(contract, server);
+
 			ns.print(contract);
-			ns.tprint(ns.codingcontract.getContractType(contract, server));
+			ns.tprint(contract_type);
 			ns.tprint(ns.codingcontract.getDescription(contract, server));
-			ns.tprint(ns.codingcontract.getData(contract, server));
+
+			ns.tprint(data);
 
 			switch (ns.codingcontract.getContractType(contract, server)) {
 				case "Algorithmic Stock Trader I":
-					const data = ns.codingcontract.getData(contract, server);
 					let max_profit = 0;
 					let best_buy = 0;
 					let best_sell = 0;
@@ -43,6 +45,24 @@ export async function main(ns) {
 					}
 					ns.tprint("INFO " + ns.codingcontract.attempt(max_profit, contract, server));
 					break;
+				case "Encryption I: Caesar Cipher":
+					const caeser_data = data[0]
+					const caeser_key = data[1]
+					let caeser_answer = ""
+
+					for (let i = 0; i < caeser_data.length; i++) {
+						let letter = caeser_data[i]
+						if (letter == " ") {
+							caeser_answer += " "
+						} else {
+							let ascii_value = letter.charCodeAt(0) - caeser_key;
+							if (ascii_value < "A".charCodeAt(0)) ascii_value += 26
+							caeser_answer += String.fromCharCode(ascii_value)
+						}
+					}
+
+					ns.tprint("INFO " + ns.codingcontract.attempt(caeser_answer, contract, server));
+					break;
 				//case "Find Largest Prime Factor"
 				//case "Subarray with Maximum Sum"
 				//case "Total Ways to Sum"
@@ -52,7 +72,6 @@ export async function main(ns) {
 				//case "Array Jumping Game II"
 				//case "Merge Overlapping Intervals"
 				//case "Generate IP Addresses"
-				//case "Algorithmic Stock Trader I"
 				//case "Algorithmic Stock Trader II"
 				//case "Algorithmic Stock Trader III"
 				//case "Algorithmic Stock Trader IV"
@@ -68,8 +87,8 @@ export async function main(ns) {
 				//case "Compression I: RLE Compression"
 				//case "Compression II: LZ Decompression"
 				//case "Compression III: LZ Compression"
-				//case "Encryption I: Caesar Cipher"
 				//case "Encryption II: Vigenère Cipher"]
-			}		}
+			}
+		}
 	}
 }
