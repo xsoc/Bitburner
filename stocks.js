@@ -3,8 +3,8 @@ export async function main(ns) {
   const thresholdLongBuy = 0.55;  // Minimum forecast to buy
   const thresholdLongSell = 0.51; // Forecast sell threshold
   const wealth_percentage_target = 0.7 // The % of available money to spend on each stock
-  const minimum_balance = 10000000 // Won't buy if balance below this
-  const minimum_purchase = 10000000 // Won't buy if the purchase is less than this
+  const minimum_balance = 1000000 // Won't buy if balance below this
+  const minimum_purchase = 1000000 // Won't buy if the purchase is less than this
   let symbols = ns.stock.getSymbols();
 
   while (true) {
@@ -16,11 +16,12 @@ export async function main(ns) {
       const unitprice = ns.stock.getPosition(stock)[1];
       const purchaseCost = ns.stock.getPurchaseCost(stock, 1, "Long");
       let purchase_value = (ns.getServerMoneyAvailable("home") * wealth_percentage_target) - position * unitprice
+
       let purchaseCount = purchase_value / purchaseCost;
       const availableFunds = ns.getServerMoneyAvailable("home");
 
-      if (purchaseCount + position + 1 > ns.stock.getMaxShares) {
-        purchaseCount = ns.stock.getMaxShares - position - 1
+      if (purchaseCount + position + 1 > ns.stock.getMaxShares(stock)) {
+        purchaseCount = ns.stock.getMaxShares(stock) - position
       }
 
       if (forecast > thresholdLongBuy
