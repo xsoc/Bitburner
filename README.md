@@ -2,7 +2,7 @@
 Collection of scripts for the amazing programming game, Bitburner ([Steam](https://store.steampowered.com/app/1812820/Bitburner/), [Web](https://danielyxie.github.io/bitburner/))
 
 ## [contractor.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/contractor.js)
-It searches all servers for coding contracts and attempts to solve what it can. Currently it is only solving "Algorithmic Stock Trader I", I plan to slowly add coding contract solutions as I find them. It seems likely this will be broken up into multiple scripts in the future for RAM and editing sanity considerations.
+It searches all servers for coding contracts and attempts to solve what it can. Currently it is only solving "Algorithmic Stock Trader I" and "Encryption I: Caesar Cipher", I plan to slowly add coding contract solutions as I find them. It seems likely this will be broken up into multiple scripts in the future for RAM and editing sanity considerations.
 
 ## [dump-contract-types.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/dump-contract-types.js)
 Creates a dummy contract of every type available and dumps the contents to the terminal. For your convenience, [dump-contract-types.txt](https://raw.githubusercontent.com/xsoc/Bitburner/main/dump-contract-types.txt) contains sample output.
