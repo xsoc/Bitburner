@@ -26,7 +26,7 @@ dump-contract-types.js: [[2,7],[4,9],[25,28],[5,11],[11,19],[2,3],[14,16],[17,18
 ```
 
 ## [extract.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/extract.js)
-Skip this for now, it is literally the example script 'early-hack-template' from the games documentation. I hope to change this later, but it does the job for me right now. It's only here because you need a script titled extract.js to run the spider.js below :)
+Skip this for now, it is literally the example script `early-hack-template` from the games documentation. I hope to change this later, but it does the job for me right now. It's only here because you need a script titled `extract.js` which takes the target server name as arg[0] to run the `spider.js` below :)
 
 ## [indexer.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/indexer.js)
 It traverses *every* server and displays some vital stats in a table format.
