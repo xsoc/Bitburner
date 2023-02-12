@@ -54,9 +54,7 @@ If you're a stock market fiend, this will give you a floating tail window that w
 It sells all your stocks - Good for buying augmentations or trying out a new stock trading script.
 
 ## [spider.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/spider.js)
-Think thrice before looking at this script if you haven't already solved this out on your own... It's not a hard problem but it is satisfying to figure out :)
-
-This script will continually search for servers to pwn. Once your hacking level is high enough and you have sufficient expliots avilable, then bam it will hack the server automatically, copy all your .js scripts from home, and, if the hacked server has available RAM, automatically run *extract.js servername* with as many threads as possbile.
+This script will continually search for servers to pwn. Once you meet all the criteria then it will hack the server automatically, copy `execute.js` from home, and, if the hacked server has available RAM, automatically execute `run extract.js servername` with as many threads as available RAM will allow.
 
 ## [stocks.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/stocks.js)
 A pretty basic (and very messy) automatated stock trading script, but it makes reasonable $$$ for now.
