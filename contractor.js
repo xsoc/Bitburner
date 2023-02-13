@@ -19,6 +19,7 @@ export async function main(ns) {
 		for (const contract of ns.ls(server, ".cct")) {
 			const contract_type = ns.codingcontract.getContractType(contract, server)
 			const data = ns.codingcontract.getData(contract, server);
+			let answer = undefined
 
 			ns.tprint(server)
 			ns.tprint(contract);
@@ -48,44 +49,85 @@ export async function main(ns) {
 				case "Encryption I: Caesar Cipher":
 					const caeser_data = data[0]
 					const caeser_key = data[1]
-					let caeser_answer = ""
+					answer = ""
 
 					for (let i = 0; i < caeser_data.length; i++) {
 						let letter = caeser_data[i]
 						if (letter == " ") {
-							caeser_answer += " "
+							answer += " "
 						} else {
 							let ascii_value = letter.charCodeAt(0) - caeser_key;
 							if (ascii_value < "A".charCodeAt(0)) ascii_value += 26
-							caeser_answer += String.fromCharCode(ascii_value)
+							answer += String.fromCharCode(ascii_value)
 						}
 					}
 
-					ns.tprint("INFO " + ns.codingcontract.attempt(caeser_answer, contract, server));
+					ns.tprint("INFO " + ns.codingcontract.attempt(answer, contract, server));
 					break;
-				//case "Find Largest Prime Factor"
-				//case "Subarray with Maximum Sum"
-				//case "Total Ways to Sum"
-				//case "Total Ways to Sum II"
-				//case "Spiralize Matrix"
-				//case "Array Jumping Game"
-				//case "Array Jumping Game II"
-				//case "Merge Overlapping Intervals"
-				//case "Generate IP Addresses"
-				//case "Algorithmic Stock Trader II"
-				//case "Algorithmic Stock Trader III"
-				//case "Algorithmic Stock Trader IV"
-				//case "Minimum Path Sum in a Triangle"
-				//case "Unique Paths in a Grid I"
-				//case "Unique Paths in a Grid II"
-				//case "Shortest Path in a Grid"
-				//case "Sanitize Parentheses in Expression"
-				//case "Find All Valid Math Expressions"
-				//case "HammingCodes: Integer to Encoded Binary"
-				//case "HammingCodes: Encoded Binary to Integer"
-				//case "Proper 2-Coloring of a Graph"
+				//case "Find Largest Prime Factor":
+				//case "Subarray with Maximum Sum":
+				//case "Total Ways to Sum":
+				//case "Total Ways to Sum II":
+				case "Spiralize Matrix":
+					answer = [];
+					const vectors = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+					let limit_left = 0;
+					let limit_right = data[0].length - 1;
+					let limit_top = 0;
+					let limit_bottom = data.length - 1;
+					let direction = 0;
+					let x = 0;
+					let y = 0;
+
+					while (answer.length < data.length * data[0].length) {
+						if (x > limit_right) {
+							limit_top++;
+							over_limit();
+						} else if (x < limit_left) {
+							limit_bottom--;
+							over_limit();
+						} else if (y < limit_top) {
+							limit_left++;
+							over_limit();
+						} else if (y > limit_bottom) {
+							limit_right--;
+							over_limit();
+						}
+						answer.push(data[y][x]);
+
+						x += vectors[direction][0];
+						y += vectors[direction][1];
+
+					}
+					function over_limit() {
+						x -= vectors[direction][0];
+						y -= vectors[direction][1];
+						direction = (direction + 1) % 4
+						x += vectors[direction][0];
+						y += vectors[direction][1];
+					}
+
+					ns.tprint("INFO " + ns.codingcontract.attempt(answer, contract, server))
+
+					break;
+				//case "Array Jumping Game":
+				//case "Array Jumping Game II":
+				//case "Merge Overlapping Intervals":
+				//case "Generate IP Addresses":
+				//case "Algorithmic Stock Trader II":
+				//case "Algorithmic Stock Trader III":
+				//case "Algorithmic Stock Trader IV":
+				//case "Minimum Path Sum in a Triangle":
+				//case "Unique Paths in a Grid I":
+				//case "Unique Paths in a Grid II":
+				//case "Shortest Path in a Grid":
+				//case "Sanitize Parentheses in Expression":
+				//case "Find All Valid Math Expressions":
+				//case "HammingCodes: Integer to Encoded Binary":
+				//case "HammingCodes: Encoded Binary to Integer":
+				//case "Proper 2-Coloring of a Graph":
 				case "Compression I: RLE Compression":
-					let answer = ""
+					answer = ""
 					let current_letter = ""
 					let current_run = 0
 
@@ -106,9 +148,9 @@ export async function main(ns) {
 					ns.tprint(answer);
 					ns.tprint(ns.codingcontract.attempt(answer, contract, server))
 					break;
-				//case "Compression II: LZ Decompression"
-				//case "Compression III: LZ Compression"
-				//case "Encryption II: Vigenère Cipher"]
+				//case "Compression II: LZ Decompression":
+				//case "Compression III: LZ Compression":
+				//case "Encryption II: Vigenère Cipher"]:
 			}
 		}
 	}
