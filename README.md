@@ -5,8 +5,10 @@ Collection of scripts for the amazing programming game, Bitburner ([Steam](https
 It searches all servers for coding contracts and attempts to solve what it can.
 Currently it has solutions for:
 - Algorithmic Stock Trader I
-- Encryption I: Caesar Cipher"
 - Compression I: RLE Compression
+- Encryption I: Caesar Cipher
+- Encryption II: Vigenère Cipher
+- Spiralize Matrix
 
 I plan to slowly add coding contract solutions as I find them. It seems likely this will be broken up into multiple scripts in the future for RAM and editing sanity considerations.
 
