@@ -20,10 +20,10 @@ export async function main(ns) {
 			const contract_type = ns.codingcontract.getContractType(contract, server)
 			const data = ns.codingcontract.getData(contract, server);
 
-			ns.print(contract);
+			ns.tprint(server)
+			ns.tprint(contract);
 			ns.tprint(contract_type);
 			ns.tprint(ns.codingcontract.getDescription(contract, server));
-
 			ns.tprint(data);
 
 			switch (ns.codingcontract.getContractType(contract, server)) {
@@ -84,7 +84,28 @@ export async function main(ns) {
 				//case "HammingCodes: Integer to Encoded Binary"
 				//case "HammingCodes: Encoded Binary to Integer"
 				//case "Proper 2-Coloring of a Graph"
-				//case "Compression I: RLE Compression"
+				case "Compression I: RLE Compression":
+					let answer = ""
+					let current_letter = ""
+					let current_run = 0
+
+					for (let i = 0; i < data.length; i++) {
+						if (data[i] == current_letter) {
+							current_run++
+						} else {
+							if (current_run > 0) answer += current_run + current_letter
+							current_letter = data[i]
+							current_run = 1
+						}
+						if (current_run == 9) {
+							answer += current_run + current_letter
+							current_run = 0
+						}
+					}
+					answer += current_run + current_letter
+					ns.tprint(answer);
+					ns.tprint(ns.codingcontract.attempt(answer, contract, server))
+					break;
 				//case "Compression II: LZ Decompression"
 				//case "Compression III: LZ Compression"
 				//case "Encryption II: Vigenère Cipher"]
