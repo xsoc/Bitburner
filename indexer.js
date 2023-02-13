@@ -22,18 +22,6 @@ export async function main(ns) {
 	ns.tprintf(row, '---------', '-------', '------', '-------', '-------', '-------');
 
 	for (const server of master_list) {
-		const vulnerabilities = [
-			{ filename: "BruteSSH.exe", port: 'sshPortOpen', method: ns.brutessh },
-			{ filename: "FTPCrack.exe", port: 'ftpPortOpen', method: ns.ftpcrack },
-			{ filename: "relaySMTP.exe", port: 'smtpPortOpen', method: ns.relaysmtp },
-			{ filename: "HTTPWorm.exe", port: 'httpPortOpen', method: ns.httpworm },
-			{ filename: "SQLInject.exe", port: 'sqlPortOpen', method: ns.sqlinject },
-		];
-
-		for (const { filename, port, method } of vulnerabilities) {
-			if (ns.fileExists(filename, "home") && !server[port]) { method(server); }
-		}
-
 		ns.tprintf(row, server,
 			ns.nFormat(ns.getServerRequiredHackingLevel(server), '0,0'),
 			ns.nFormat(ns.getServerMaxMoney(server), '($ 0.00 a)'),
