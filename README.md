@@ -1,6 +1,8 @@
 # Bitburner
 Collection of scripts for the amazing programming game, Bitburner ([Steam](https://store.steampowered.com/app/1812820/Bitburner/), [Web](https://danielyxie.github.io/bitburner/))
 
+Be warned! I'm very inconsistent with semicolons, so take a deep breath first 😅
+
 ## [contractor.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/contractor.js)
 It searches all servers for coding contracts and attempts to solve what it can.
 Currently it has solutions for:
@@ -56,7 +58,7 @@ applied-energetics   |      791 |     $ 1.63 b |   $ 325.15 m |        0 |      
 ```
 
 ## [networth.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/networth.js)
-If you're a stock market fiend, this will give you a floating tail window that will tell you your total $$$, ie. stock market value + cash
+If you're a stock market fiend, this will give you a floating tail window that will tell you your total $$$, ie. stock market value + cash, but _not_ counting the stock market transaction fees.
 
 ## [sellallstocks.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/sellallstocks.js)
 It sells all your stocks - Good for buying augmentations or trying out a new stock trading script.
@@ -72,6 +74,7 @@ Displays the entire network tree layout with home as the root node. Think minima
 
 Sample output:
 ```
+...
 tree.js:      --silver-helix
 tree.js:      ---the-hub
 tree.js:      ---crush-fitness
