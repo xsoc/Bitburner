@@ -1,5 +1,11 @@
 /** @param {NS} ns */
 export async function main(ns) {
+	const DEBUG = false;
+
+	if (DEBUG) {
+		ns.codingcontract.createDummyContract("Spiralize Matrix");
+	}
+
 	var master_server_list = [];
 	spider("home");
 
@@ -54,16 +60,16 @@ export async function main(ns) {
 					while (answer.length < data.length * data[0].length) {
 						if (x > limit_right) {
 							limit_top++;
-							over_limit();
+							change_direction();
 						} else if (x < limit_left) {
 							limit_bottom--;
-							over_limit();
+							change_direction();
 						} else if (y < limit_top) {
 							limit_left++;
-							over_limit();
+							change_direction();
 						} else if (y > limit_bottom) {
 							limit_right--;
-							over_limit();
+							change_direction();
 						}
 						answer.push(data[y][x]);
 
@@ -71,15 +77,16 @@ export async function main(ns) {
 						y += vectors[direction][1];
 
 					}
-					function over_limit() {
+					function change_direction() {
+						// back up one step
 						x -= vectors[direction][0];
 						y -= vectors[direction][1];
+						// rotate
 						direction = (direction + 1) % 4
+						// move to the corrected position
 						x += vectors[direction][0];
 						y += vectors[direction][1];
 					}
-
-					ns.tprint("INFO " + ns.codingcontract.attempt(answer, contract, server))
 
 					break;
 
@@ -96,7 +103,7 @@ export async function main(ns) {
 					break;
 
 				case "Algorithmic Stock Trader I":
-					let max_profit = 0;
+					answer = 0;
 					let best_buy = 0;
 					let best_sell = 0;
 
@@ -104,14 +111,13 @@ export async function main(ns) {
 						for (let j = i + 1; j < data.length; j++) {
 							let profit = data[j] - data[i];
 
-							if (profit > max_profit) {
-								max_profit = profit;
+							if (profit > answer) {
+								answer = profit;
 								best_buy = i;
 								best_sell = j;
 							}
 						}
 					}
-					ns.tprint("INFO " + ns.codingcontract.attempt(max_profit, contract, server));
 					break;
 
 				case "Algorithmic Stock Trader II":
@@ -169,9 +175,9 @@ export async function main(ns) {
 						}
 					}
 					answer += current_run + current_letter
-					ns.tprint(answer);
-					ns.tprint(ns.codingcontract.attempt(answer, contract, server))
+
 					break;
+
 				case "Compression II: LZ Decompression":
 					break;
 
@@ -194,7 +200,6 @@ export async function main(ns) {
 						}
 					}
 
-					ns.tprint("INFO " + ns.codingcontract.attempt(answer, contract, server));
 					break;
 
 				case "Encryption II: Vigenère Cipher":
@@ -222,9 +227,16 @@ export async function main(ns) {
 						answer += vigenereSquare[value][key_value]
 					}
 
-					ns.tprint("INFO " + ns.codingcontract.attempt(answer, contract, server));
 
 					break;
+			}
+			if (answer != undefined) {
+				if (DEBUG) { // If DEBUG then only attempt contracts on home (i.e. dummy contracts)
+					ns.tprint("INFO Debug answer - " + answer)
+					if (server == "home") ns.tprint("INFO " + ns.codingcontract.attempt(answer, contract, "home"));
+				} else {
+					ns.tprint("INFO " + ns.codingcontract.attempt(answer, contract, server));
+				}
 			}
 		}
 	}
