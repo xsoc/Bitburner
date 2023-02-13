@@ -16,8 +16,9 @@ export async function main(ns) {
 				for (let i = 1; i < depth; i++) {
 					dash += "-"
 				}
-				
-				if (ns.hasRootAccess(server)) {
+				if (server == ns.args[0]) {
+					dash = "WARN " + dash
+				} else if (ns.hasRootAccess(server)) {
 					dash = "INFO " + dash
 				} else {
 					dash = "     " + dash

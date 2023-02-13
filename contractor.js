@@ -25,15 +25,15 @@ export async function main(ns) {
 		for (const contract of ns.ls(server, ".cct")) {
 			const contract_type = ns.codingcontract.getContractType(contract, server)
 			const data = ns.codingcontract.getData(contract, server);
-			let answer = undefined
+			let answer = undefined;
 
-			ns.tprint(server)
+			ns.tprint(server);
 			ns.tprint(contract);
 			ns.tprint(contract_type);
 			ns.tprint(ns.codingcontract.getDescription(contract, server));
 			ns.tprint(data);
 
-			switch (ns.codingcontract.getContractType(contract, server)) {
+			switch (contract_type) {
 				case "Find Largest Prime Factor":
 					break;
 
@@ -157,24 +157,25 @@ export async function main(ns) {
 					break;
 
 				case "Compression I: RLE Compression":
-					answer = ""
-					let current_letter = ""
-					let current_run = 0
+					answer = "";
+					let current_letter = "";
+					let current_run = 0;
+					const max_run_length = 9;
 
 					for (let i = 0; i < data.length; i++) {
 						if (data[i] == current_letter) {
-							current_run++
+							current_run++;
 						} else {
 							if (current_run > 0) answer += current_run + current_letter
-							current_letter = data[i]
-							current_run = 1
+							current_letter = data[i];
+							current_run = 1;
 						}
-						if (current_run == 9) {
-							answer += current_run + current_letter
-							current_run = 0
+						if (current_run == max_run_length) {
+							answer += current_run + current_letter;
+							current_run = 0;
 						}
 					}
-					answer += current_run + current_letter
+					answer += current_run + current_letter;
 
 					break;
 
@@ -185,9 +186,9 @@ export async function main(ns) {
 					break;
 
 				case "Encryption I: Caesar Cipher":
-					const caeser_data = data[0]
-					const caeser_key = data[1]
-					answer = ""
+					const caeser_data = data[0];
+					const caeser_key = data[1];
+					answer = "";
 
 					for (let i = 0; i < caeser_data.length; i++) {
 						let letter = caeser_data[i]
@@ -195,8 +196,8 @@ export async function main(ns) {
 							answer += " "
 						} else {
 							let ascii_value = letter.charCodeAt(0) - caeser_key;
-							if (ascii_value < "A".charCodeAt(0)) ascii_value += 26
-							answer += String.fromCharCode(ascii_value)
+							if (ascii_value < "A".charCodeAt(0)) ascii_value += 26;
+							answer += String.fromCharCode(ascii_value);
 						}
 					}
 
@@ -204,12 +205,12 @@ export async function main(ns) {
 
 				case "Encryption II: Vigenère Cipher":
 					let message = data[0];
-					let key = data[1]
-					answer = ""
+					let key = data[1];
+					answer = "";
 					let alphabet = "";
 					let vigenereSquare = [];
 
-					for (let i = "A".charCodeAt(0); i <= "Z".charCodeAt(0); i++) alphabet += String.fromCharCode(i)
+					for (let i = "A".charCodeAt(0); i <= "Z".charCodeAt(0); i++) alphabet += String.fromCharCode(i);
 
 					for (let i = 0; i < alphabet.length; i++) {
 						let row = [];
@@ -221,10 +222,10 @@ export async function main(ns) {
 
 					for (let i = 0; i < message.length; i++) {
 						let letter = message[i];
-						let value = letter.charCodeAt(0) - "A".charCodeAt(0)
-						let key_index = answer.length % key.length
+						let value = letter.charCodeAt(0) - "A".charCodeAt(0);
+						let key_index = answer.length % key.length;
 						let key_value = alphabet.indexOf(key.charAt(key_index));
-						answer += vigenereSquare[value][key_value]
+						answer += vigenereSquare[value][key_value];
 					}
 
 
