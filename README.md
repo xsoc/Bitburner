@@ -12,6 +12,11 @@ Collection of scripts for the amazing programming game, Bitburner ([Steam](https
 
 Be warned! I'm very inconsistent with semicolons, good luck 😅
 
+## [bladeburner.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/bladeburner.js)
+Automates bladeburner. Keeps chaos and stamina in check, automatically upgrades skills, and.... *hopefully* it will do Black Ops for you too, but I've got a while before I've ranked up enough the test that bit :)
+
+I don't really know what the travel mechanic does, so I didn't implement that.
+
 ## [contractor.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/contractor.js)
 It searches all servers for coding contracts and attempts to solve what it can.
 Currently it has solutions for:
