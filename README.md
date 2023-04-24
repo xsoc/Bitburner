@@ -83,6 +83,9 @@ This script will continually search for servers to pwn. Once you meet all the cr
 ## [stocks.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/stocks.js)
 A pretty basic (and very messy) automatated stock trading script, but it makes reasonable $$$ for now.
 
+## [stocky.js](https://raw.githubusercontent.com/xsoc/Bitburner/main/stocky.js)
+For that BitNode where you can only trade, getting enough cash to buy API access can be tough. This script tries to infer where a stock is headed by taking an average over a number of market cycles, then will try to short/long as appropriate. It actually turns a profit! *Sometimes*. Other times it sends you broke. If you go broke, just restart the node... or find a nicer solution and tell me about it.
+
 ## [tree](https://raw.githubusercontent.com/xsoc/Bitburner/main/tree.js)
 Displays the entire network tree layout with home as the root node. Think minimalist scan-analyse.
 
